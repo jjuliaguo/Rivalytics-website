@@ -147,7 +147,7 @@ export default function Home() {
       >
         {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <Image src="/Just letter logo.png" alt="Rivalytics Logo" width={36} height={36} />
+          <Image src="/justlogo.png" alt="Rivalytics Logo" width={36} height={36} />
           <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, fontWeight: 400, color: "#245EAB", letterSpacing: "-0.3px" }}>
             Rivalytics
           </span>
@@ -567,7 +567,7 @@ export default function Home() {
         flexWrap: "wrap", gap: 16, background: "#F8FAFF",
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <Image src="/Just letter logo.png" alt="Rivalytics Logo" width={28} height={28} />
+          <Image src="/justlogo.png" alt="Rivalytics Logo" width={28} height={28} />
           <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 18, color: "#245EAB" }}>Rivalytics</span>
         </div>
         <p style={{ fontSize: 13, color: "#94A3B8", margin: 0 }}>© 2025 Rivalytics. Competitive intelligence, automated.</p>
