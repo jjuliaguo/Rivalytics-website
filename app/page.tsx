@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ export default function Home() {
     {
       icon: "🔍",
       title: "Competitor Tracking",
-      desc: "Monitor every move your rivals make — pricing shifts, product launches, messaging changes — all surfaced automatically.",
+      desc: "Monitor every move your rivals make (pricing shifts, product launches, messaging changes) all surfaced automatically.",
       accent: "#245EAB",
     },
     {
@@ -35,19 +36,19 @@ export default function Home() {
     {
       icon: "🗺️",
       title: "Market Mapping",
-      desc: "See the full competitive landscape at a glance. Understand who owns which segments and where you can win.",
+      desc: "See the complete competitive landscape at a glance. Understand who owns which segments and where you can win.",
       accent: "#0EA5E9",
     },
     {
       icon: "⚡",
       title: "Opportunity Radar",
-      desc: "Surface whitespace and uncontested niches before your competitors do. Be first to the gaps that matter.",
+      desc: "Expand into niches before your competitors do. Be first to the gaps that matter.",
       accent: "#6366F1",
     },
     {
       icon: "📈",
       title: "Share of Voice",
-      desc: "Track how your brand measures up in search, social, and content — and find exactly where to invest next.",
+      desc: "Track how your brand measures up in search, social, and content. Find exactly where to invest next.",
       accent: "#245EAB",
     },
     {
@@ -61,8 +62,8 @@ export default function Home() {
   const plans = [
     {
       name: "Starter",
-      monthly: 199,
-      annual: 165,
+      monthly: 149,
+      annual: 139,
       desc: "For growing teams getting serious about competitive intel.",
       features: ["5 competitors tracked", "3 markets monitored", "Weekly digest", "Opportunity radar", "Email alerts"],
       cta: "Start free trial",
@@ -70,8 +71,8 @@ export default function Home() {
     },
     {
       name: "Growth",
-      monthly: 549,
-      annual: 449,
+      monthly: 399,
+      annual: 389,
       desc: "For revenue teams who need the complete picture.",
       features: ["20 competitors tracked", "Unlimited markets", "Daily live feed", "Battle cards", "Slack integration", "Share of voice"],
       cta: "Start free trial",
@@ -79,8 +80,8 @@ export default function Home() {
     },
     {
       name: "Enterprise",
-      monthly: null,
-      annual: null,
+      monthly: 999,
+      annual: 989,
       desc: "Custom pipelines, dedicated analyst, white-label reports.",
       features: ["Unlimited competitors", "Custom data sources", "Real-time alerts", "API access", "Dedicated CSM", "SSO & SAML"],
       cta: "Talk to us",
@@ -139,22 +140,21 @@ export default function Home() {
           position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
           display: "flex", alignItems: "center", justifyContent: "space-between",
           padding: "16px 52px",
-          background: scrollY > 50 ? "rgba(248,250,255,0.92)" : "transparent",
-          backdropFilter: scrollY > 50 ? "blur(14px)" : "none",
-          borderBottom: scrollY > 50 ? "1px solid rgba(36,94,171,0.1)" : "none",
-          transition: "all 0.3s ease",
+          background: "#ffffff",
+          backdropFilter: "none",
+          borderBottom: "1px solid rgba(0,0,0,0.05)"
         }}
       >
         {/* Logo */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <Image src="/justlogo.png" alt="Rivalytics Logo" width={36} height={36} />
-          <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 22, fontWeight: 400, color: "#245EAB", letterSpacing: "-0.3px" }}>
-            Rivalytics
-          </span>
-        </div>
+        <Link href="/"  onClick={(e) => {    e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+>
+          <Image src="/rivalytics-logo.png" alt="Rivalytics Logo" width={50} height={50} />
+        </Link>
 
         <div style={{ display: "flex", gap: 36 }}>
-          {["Features", "Pricing", "Blog"].map((item) => (
+          {["Features", "Demo", "Pricing"].map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">{item}</a>
           ))}
         </div>
@@ -239,7 +239,7 @@ export default function Home() {
           position: "relative", zIndex: 1,
           animation: "fadeUp 0.65s ease 0.2s both",
         }}>
-          Rivalytics tracks your competitors, analyzes their strategy, and uncovers opportunities — all in one powerful platform.
+          We turn competitor activity into clear, immediate actions so you know what to do, not just what happened.
         </p>
 
         {/* CTA */}
@@ -278,7 +278,7 @@ export default function Home() {
           marginTop: 44, fontSize: 14, color: "#94A3B8",
           position: "relative", zIndex: 1, animation: "fadeUp 0.65s ease 0.4s both",
         }}>
-          🎉 200+ companies already on the waitlist
+          🎉 Companies already on the waitlist
         </p>
       </section>
 
@@ -349,6 +349,264 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+          {/* ── DEMO PREVIEW ── */}
+<section id="demo" style={{ padding: "110px 48px", background: "#F8FAFF" }}>
+  <div style={{ maxWidth: 1120, margin: "0 auto" }}>
+    <div style={{ textAlign: "center", marginBottom: 52 }}>
+      <p style={{
+        fontSize: 12,
+        fontWeight: 700,
+        letterSpacing: "3px",
+        color: "#245EAB",
+        textTransform: "uppercase",
+        marginBottom: 14,
+      }}>
+        Live demo preview
+      </p>
+
+      <h2 style={{
+        fontFamily: "'Instrument Serif', serif",
+        fontSize: "clamp(36px, 5vw, 58px)",
+        fontWeight: 400,
+        letterSpacing: "-1px",
+        lineHeight: 1.1,
+        marginBottom: 18,
+      }}>
+        From competitor signal to<br />
+        <em style={{ color: "#245EAB" }}>recommended action.</em>
+      </h2>
+
+      <p style={{
+        fontSize: 17,
+        color: "#64748B",
+        maxWidth: 620,
+        margin: "0 auto",
+        lineHeight: 1.7,
+      }}>
+        Rivalytics detects competitor weaknesses and turns them into specific actions your team can take immediately.
+      </p>
+    </div>
+
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "1.1fr 0.9fr",
+      gap: 28,
+      alignItems: "stretch",
+    }}>
+      {/* Left: dashboard preview */}
+      <div style={{
+        background: "#FFFFFF",
+        border: "1px solid rgba(36,94,171,0.14)",
+        borderRadius: 22,
+        padding: 28,
+        boxShadow: "0 18px 55px rgba(36,94,171,0.10)",
+      }}>
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 24,
+        }}>
+          <div>
+            <p style={{ fontSize: 12, color: "#94A3B8", marginBottom: 4 }}>
+              Apex Athletic vs. market
+            </p>
+            <h3 style={{ fontSize: 22, margin: 0 }}>Intelligence dashboard</h3>
+          </div>
+
+          <span style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            fontSize: 12,
+            color: "#64748B",
+          }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#10B981" }} />
+            Synced 4 min ago
+          </span>
+        </div>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: 12,
+          marginBottom: 22,
+        }}>
+          {[
+            ["Active alerts", "2"],
+            ["Sources", "847"],
+            ["Competitor avg", "68"],
+          ].map(([label, value]) => (
+            <div key={label} style={{
+              background: "#F8FAFF",
+              border: "1px solid #E5E7EB",
+              borderRadius: 14,
+              padding: 18,
+            }}>
+              <p style={{
+                fontSize: 11,
+                color: "#94A3B8",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                marginBottom: 8,
+              }}>
+                {label}
+              </p>
+              <p style={{
+                fontSize: 28,
+                fontWeight: 800,
+                color: label === "Active alerts" ? "#EF4444" : "#0F172A",
+                margin: 0,
+              }}>
+                {value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{
+          background: "#F8FAFF",
+          border: "1px solid #E5E7EB",
+          borderRadius: 16,
+          padding: 22,
+        }}>
+          <p style={{
+            fontSize: 12,
+            color: "#94A3B8",
+            textTransform: "uppercase",
+            letterSpacing: "1.4px",
+            marginBottom: 18,
+          }}>
+            Latest signal
+          </p>
+
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            padding: "14px 0",
+            borderBottom: "1px solid #E5E7EB",
+          }}>
+            <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#EF4444" }} />
+            <div style={{ flex: 1 }}>
+              <p style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>
+                Lululemon sizing complaints spike 340% in 6 days
+              </p>
+              <p style={{ fontSize: 13, color: "#64748B", margin: 0 }}>
+                Detected across Amazon, Reddit, and Trustpilot
+              </p>
+            </div>
+            <span style={{
+              color: "#EF4444",
+              fontSize: 13,
+              fontWeight: 800,
+            }}>
+              +340%
+            </span>
+          </div>
+
+          <div style={{ marginTop: 18 }}>
+            <p style={{
+              fontSize: 12,
+              color: "#245EAB",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "1.4px",
+              marginBottom: 8,
+            }}>
+              Recommended action
+            </p>
+            <p style={{
+              fontSize: 15,
+              color: "#334155",
+              lineHeight: 1.65,
+              margin: 0,
+            }}>
+              Launch a “true-to-size guarantee” campaign targeting frustrated shoppers who follow Lululemon and fitness creators.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Right: action card */}
+      <div style={{
+        background: "#0F172A",
+        color: "#F8FAFF",
+        borderRadius: 22,
+        padding: 34,
+        boxShadow: "0 24px 70px rgba(15,23,42,0.24)",
+      }}>
+        <p style={{
+          fontSize: 12,
+          fontWeight: 800,
+          color: "#93C5FD",
+          textTransform: "uppercase",
+          letterSpacing: "1.6px",
+          marginBottom: 18,
+        }}>
+          What Rivalytics does
+        </p>
+
+        <h3 style={{
+          fontSize: 32,
+          lineHeight: 1.15,
+          letterSpacing: "-0.6px",
+          marginBottom: 20,
+        }}>
+          Not just what happened. What to do next.
+        </h3>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          {[
+            ["1", "Detects complaint spikes across public sources"],
+            ["2", "Identifies why the signal matters"],
+            ["3", "Recommends the exact campaign, audience, and timing"],
+          ].map(([num, text]) => (
+            <div key={num} style={{ display: "flex", gap: 12 }}>
+              <span style={{
+                width: 28,
+                height: 28,
+                borderRadius: "50%",
+                background: "#245EAB",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 13,
+                fontWeight: 800,
+                flexShrink: 0,
+              }}>
+                {num}
+              </span>
+              <p style={{ color: "#CBD5E1", fontSize: 15, lineHeight: 1.6, margin: 0 }}>
+                {text}
+              </p>
+            </div>
+          ))}
+        </div>
+        <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=juliaguo@wharton.upenn.edu&su=Rivalytics Demo Request&body=Hi Julia, I'd love to see a demo of Rivalytics."
+      target="_blank"
+  style={{
+    display: "inline-flex",
+    marginTop: 30,
+    background: "#FFFFFF",
+    color: "#245EAB",
+    padding: "14px 24px",
+    borderRadius: 10,
+    fontSize: 15,
+    fontWeight: 800,
+    textDecoration: "none",
+    cursor: "pointer",
+  }}
+>
+  Request demo →
+</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ── PRICING ── */}
       <section
@@ -502,7 +760,7 @@ export default function Home() {
             Get ahead of your <em style={{ color: "#245EAB" }}>competition.</em>
           </h2>
           <p style={{ fontSize: 18, color: "#64748B", maxWidth: 480, margin: "0 auto 48px", lineHeight: 1.65 }}>
-            Join 200+ revenue and strategy teams getting early access to Rivalytics. Rolling invites — claim your spot today.
+            We’re onboarding groups of ecommerce teams to test Rivalytics on live competitor data. Get early access and start capturing opportunities immediately.
           </p>
 
           {submitted ? (
@@ -566,11 +824,15 @@ export default function Home() {
         display: "flex", alignItems: "center", justifyContent: "space-between",
         flexWrap: "wrap", gap: 16, background: "#F8FAFF",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <Image src="/justlogo.png" alt="Rivalytics Logo" width={28} height={28} />
-          <span style={{ fontFamily: "'Instrument Serif', serif", fontSize: 18, color: "#245EAB" }}>Rivalytics</span>
-        </div>
-        <p style={{ fontSize: 13, color: "#94A3B8", margin: 0 }}>© 2025 Rivalytics. Competitive intelligence, automated.</p>
+
+        {/* Logo */}
+        <Link href="/"  onClick={(e) => {    e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+>
+          <Image src="/rivalytics-logo.png" alt="Rivalytics Logo" width={46} height={46} />
+        </Link>
+        <p style={{ fontSize: 13, color: "#94A3B8", margin: 0 }}>© 2026 Rivalytics. Competitive intelligence, automated.</p>
         <div style={{ display: "flex", gap: 24, fontSize: 14 }}>
           {["Privacy", "Terms", "Contact"].map((l) => (
             <a key={l} href="#" style={{ color: "#64748B", textDecoration: "none" }}>{l}</a>
