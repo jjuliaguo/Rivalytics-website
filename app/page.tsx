@@ -833,11 +833,6 @@ export default function Home() {
           <Image src="/rivalytics-logo.png" alt="Rivalytics Logo" width={46} height={46} />
         </Link>
         <p style={{ fontSize: 13, color: "#94A3B8", margin: 0 }}>© 2026 Rivalytics. Competitive intelligence, automated.</p>
-        <div style={{ display: "flex", gap: 24, fontSize: 14 }}>
-          {["Privacy", "Terms", "Contact"].map((l) => (
-            <a key={l} href="#" style={{ color: "#64748B", textDecoration: "none" }}>{l}</a>
-          ))}
-        </div>
       </footer>
     </div>
   );
