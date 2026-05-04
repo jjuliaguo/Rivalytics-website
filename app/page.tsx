@@ -818,22 +818,47 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{
-        borderTop: "1px solid rgba(36,94,171,0.12)",
-        padding: "28px 52px",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        flexWrap: "wrap", gap: 16, background: "#F8FAFF",
-      }}>
-
-        {/* Logo */}
-        <Link href="/"  onClick={(e) => {    e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+<footer
+  style={{
+    borderTop: "1px solid rgba(36,94,171,0.12)",
+    padding: "20px 52px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    background: "#F8FAFF",
+  }}
 >
-          <Image src="/rivalytics-logo.png" alt="Rivalytics Logo" width={46} height={46} />
-        </Link>
-        <p style={{ fontSize: 13, color: "#94A3B8", margin: 0 }}>© 2026 Rivalytics. Competitive intelligence, automated.</p>
-      </footer>
-    </div>
+  <Link
+    href="/"
+    onClick={(e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }}
+    style={{ display: "flex", cursor: "pointer" }}
+  >
+    <Image
+      src="/rivalytics-logo.png"
+      alt="Rivalytics Logo"
+      width={46}
+      height={46}
+      style={{ transform: "translateY(-3px)" }}
+    />
+  </Link>
+
+  <p
+    style={{
+      fontSize: 13,
+      color: "#94A3B8",
+      margin: 0,
+      flex: 1,
+      textAlign: "center",
+    }}
+  >
+    © 2026 Rivalytics. Competitive intelligence, automated.
+  </p>
+
+  <div style={{ width: 46 }} />
+</footer>
+</div> 
   );
 }
